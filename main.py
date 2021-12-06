@@ -1,3 +1,4 @@
+import tkinter as TK
 from turtle import Screen, Turtle
 from pawn import Pawn
 import time
