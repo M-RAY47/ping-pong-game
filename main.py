@@ -14,4 +14,12 @@ lt_pawn = Pawn()
 rd_pawn.goto(380, 0)
 lt_pawn.goto(-380,0)
 ball =Ball()
+
+game_is_on= True
+while game_is_on:
+	screen.update()
+	time.sleep(0.1)
+	ball.move()
+
+
 screen.exitonclick()
