@@ -9,10 +9,9 @@ screen = Screen()
 screen.setup(width=800, height=600)
 screen.bgcolor("black")
 screen.title("Ping Pong")
-rd_paddle = Paddle()
-lt_paddle = Paddle()
-rd_paddle.goto(380, 0)
-lt_paddle.goto(-380,0)
+rd_paddle = Paddle((380, 0))
+lt_paddle = Paddle((-380,0))
+# display  ball on the screen
 ball =Ball()
 
 game_is_on= True
