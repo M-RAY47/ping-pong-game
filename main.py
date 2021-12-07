@@ -10,8 +10,14 @@ screen = Screen()
 screen.setup(width=800, height=600)
 screen.bgcolor("black")
 screen.title("Ping Pong")
-rd_paddle = Paddle((380, 0))
-lt_paddle = Paddle((-380,0))
+screen.tracer(0)
+rd_paddle = Paddle((350, 0))
+lt_paddle = Paddle((-350,0))
+screen.listen()
+screen.onkey(rd_paddle.go_up, "Up")
+screen.onkey(rd_paddle.go_down, "Down")
+screen.onkey(lt_paddle.go_up, "w")
+screen.onkey(lt_paddle.go_down, "s")
 
 # display  ball on the screen
 ball =Ball()
@@ -21,11 +27,11 @@ scoreboard = Scoreboard()
 game_is_on= True
 while game_is_on:
 	screen.update()
-	time.sleep(ball.mv_speed())
+	time.sleep(ball.mv_speed)
 	ball.move()
 
 	#Collision with the Screen
-	if ball.y_cor() > 280 or ball.y_cor() < -280:
+	if ball.ycor() > 280 or ball.ycor() < -280:
 		ball.bounce_y()
 
 	#Detection of collision with the Paddle
@@ -36,10 +42,12 @@ while game_is_on:
 	if ball.xcor() > 380:
 		ball.res_position()
 		scoreboard.lt_point()
+		print(scoreboard.lt_point())
 
 	# When the left paddle misses the ball, the ball
-	if ball.xcor() > 380:
+	if ball.xcor() < -380:
 		ball.res_position()
 		scoreboard.rd_point()
+		print(scoreboard.rd_point())
 
 screen.exitonclick()
