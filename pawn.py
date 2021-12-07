@@ -9,4 +9,8 @@ class Pawn(Turtle):
 		self.shapesize(stretch_wid=5,stretch_len=1)
 	def go_up(self):
 		new_y = self.y_cor() + 20
-		self.goto(self.x_cor() + new_y)
+		self.goto(self.x_cor(), new_y)
+
+	def go_down(self):
+		new_y = self.y_cor() - 20
+		self.goto(self.x_cor(), new_y)
