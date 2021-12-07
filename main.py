@@ -1,8 +1,9 @@
-import tkinter as TK
+# import tkinter as TK
 from turtle import Screen, Turtle
 from paddle import Paddle
 import time
 from ball import Ball
+from scoreboard import Scoreboard
 
 time.sleep(0.1)
 screen = Screen()
@@ -11,13 +12,16 @@ screen.bgcolor("black")
 screen.title("Ping Pong")
 rd_paddle = Paddle((380, 0))
 lt_paddle = Paddle((-380,0))
+
 # display  ball on the screen
 ball =Ball()
+#show the scoreboard on the screen
+scoreboard = Scoreboard()
 
 game_is_on= True
 while game_is_on:
 	screen.update()
-	time.sleep(0.1)
+	time.sleep(ball.mv_speed())
 	ball.move()
 
 	#Collision with the Screen
@@ -31,9 +35,11 @@ while game_is_on:
 	# When the right paddle misses the ball, the ball
 	if ball.xcor() > 380:
 		ball.res_position()
+		scoreboard.lt_point()
 
 	# When the left paddle misses the ball, the ball
 	if ball.xcor() > 380:
 		ball.res_position()
+		scoreboard.rd_point()
 
 screen.exitonclick()
