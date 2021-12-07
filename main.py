@@ -32,4 +32,8 @@ while game_is_on:
 	if ball.xcor() > 380:
 		ball.res_position()
 
+	# When the left paddle misses the ball, the ball
+	if ball.xcor() > 380:
+		ball.res_position()
+
 screen.exitonclick()
