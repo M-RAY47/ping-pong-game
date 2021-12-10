@@ -20,6 +20,8 @@ class Scoreboard(Turtle):
 	
 	def lt_point(self):
 		self.lt_score += 1
+		self.update_scoreboard()
 	
 	def rd_point(self):
 		self.rd_score += 1
+		self.update_scoreboard()

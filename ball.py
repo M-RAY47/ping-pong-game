@@ -10,6 +10,7 @@ class Ball(Turtle):
 		self.x_move = 10
 		self.y_move = 10
 		self.mv_speed = 0.1
+		self.move()
 
 	def move(self):
 		new_x = self.xcor() + self.x_move
@@ -25,5 +26,5 @@ class Ball(Turtle):
 
 	def res_position(self):
 		self.goto(0,0)
-		self.mv_speed = 0.1
 		self.bounce_x()
+		self.mv_speed = 0.1
