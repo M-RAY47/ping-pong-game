@@ -27,5 +27,4 @@ class Ball(Turtle):
 	def res_position(self):
 		self.goto(0,0)
 		self.bounce_x()
-		self.bounce_y()
 		self.mv_speed = 0.1
