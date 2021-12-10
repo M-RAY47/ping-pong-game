@@ -19,9 +19,16 @@ class Scoreboard(Turtle):
 		self.write(self.rd_score, align="center", font=("Courier", 80, "normal"))
 	
 	def lt_point(self):
+		print("Before:",self.lt_score)
 		self.lt_score += 1
+		print("After:",self.lt_score)
 		self.update_scoreboard()
+		# print("AFTER Update:",self.update_scoreboard)
 	
 	def rd_point(self):
+		self.clear()
+		print("before:",self.rd_score)
 		self.rd_score += 1
+		print("After:",self.rd_score)
+		self.clear()
 		self.update_scoreboard()
