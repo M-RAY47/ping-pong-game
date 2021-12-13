@@ -1,2 +1,2 @@
 #This legendary Ping-Pong game !!!
-## Using tkinter withe Turtle Module
+## Using tkinter with the Turtle Module
